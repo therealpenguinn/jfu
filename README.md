@@ -41,10 +41,10 @@ npm install
 ```
 ### Give Jellyfin the permissions for read and write 
 ```bash
-sudo chown -R jellyfin:jellyfin /home/tux/web/jellyfin
-sudo chmod -R 775 /home/tux/web/jellyfin
-sudo usermod -aG tux jellyfin
-sudo chmod -R 770 /home/tux/web/jellyfin
+sudo chown -R jellyfin:jellyfin /home/your-user-name/web/jellyfin
+sudo chmod -R 775 /home/your-user-name/web/jellyfin
+sudo usermod -aG your-user-name jellyfin
+sudo chmod -R 770 /home/your-user-name/web/jellyfin
 sudo systemctl restart jellyfin
 ```
 ### Start the server
