@@ -54,12 +54,12 @@ npm start
 ```
 ## Accessing the Jellyfin Upload Website
 ### Jellyfin Web Interface:
-Once Jellyfin is set up, you can access the Jellyfin server at http://<your-ip-address>:8096.
+Once Jellyfin is set up, you can access the Jellyfin server at http://your-ip-address:8096.
 
 ### Jellyfin Upload Website:
-The upload interface will be available at http://<your-ip-address>:3000.
+The upload interface will be available at http://your-ip-address:3000.
 
-Make sure to replace <your-ip-address> with the actual IP address of the machine running the server. To find <your-ip-address> 
+Make sure to replace <your-ip-address> with the actual IP address of the machine running the server. To find your-ip-address 
 ```bash
 sudo apt install net-tools
 ifconfig
@@ -108,4 +108,5 @@ exit
 ### NOTE MAKE SURE THAT THE DISTRO ON WHICH JELLYFIN IS INSTALLED IS THE DEFULT WSL DISTRO. RUN THE FOLLOWING TO FINDOUT
 ```bash
 wsl --list
+wsl --set-default <distro-name>
 ```
