@@ -41,11 +41,25 @@ npm install
 ```
 ### Give Jellyfin the permissions for read and write 
 ```bash
-sudo chown -R jellyfin:jellyfin /home/your-user-name/web/jellyfin
-sudo chmod -R 775 /home/your-user-name/web/jellyfin
-sudo usermod -aG your-user-name jellyfin
+# Create a shared group for jellyfin-related access
+sudo groupadd jellygroup
+
+# Add both users to the group
+sudo usermod -aG jellygroup jellyfin
+sudo usermod -aG jellygroup beh
+
+# Change group ownership of the folder
+sudo chown -R your-user-name:jellygroup /home/your-user-name/web/jellyfin
+
+# Set folder permissions: owner and group get full access, others none
 sudo chmod -R 770 /home/your-user-name/web/jellyfin
+
+# Optional: ensure new files inherit the group
+sudo find /home/your-user-name/web/jellyfin -type d -exec chmod g+s {} \;
+
+# Restart the jellyfin service
 sudo systemctl restart jellyfin
+
 ```
 ### Start the server
 Launch the application:
